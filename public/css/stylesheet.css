@@ -1,0 +1,38 @@
+body {
+  background-color: brown;
+  color: white;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.value {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 20px;
+}
+.endpoint {
+  margin: 10px;
+  padding: 2px 5px;
+}
+
+.endpoint a {
+  color: #000000;
+  cursor: pointer;
+  text-decoration: none;
+}
+.doc {
+  min-width: 40%;
+  max-width: 50%;
+}
+
+.hidden {
+  display: none;
+}
