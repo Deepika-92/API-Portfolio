@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "./node_modules/.bin/nodemon index.js",
+    "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
+    "lint": "./node_modules/.bin/eslint --format codeframe .",
+    "lint:fix": "./node_modules/.bin/eslint --fix --format codeframe .",
+    "test": "./node_modules/.bin/mocha tests/**/*.test.js"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Deepika-92/API-Portfolio.git"
@@ -19,11 +23,19 @@
   "homepage": "https://github.com/Deepika-92/API-Portfolio#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "pug": "^3.0.0"
+    "mysql2": "^2.2.5",
+    "pug": "^3.0.0",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "env-cmd": "^10.1.0",
     "eslint": "^7.18.0",
+    "mocha": "^8.2.1",
     "nodemon": "^2.0.7",
-    "pug-lint": "^2.6.0"
+    "pug-lint": "^2.6.0",
+    "sinon": "^9.2.4",
+    "sinon-chai": "^3.5.0"
   }
 }

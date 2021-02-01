@@ -3,6 +3,7 @@ CREATE USER 'deepikaresume'@'localhost' IDENTIFIED WITH mysql_native_password BY
 GRANT ALL ON deepikaresume.* TO 'deepikaresume'@'localhost';
 use deepikaresume; 
 create table about (
+    id INT,
     name VARCHAR(255),
     title VARCHAR(255),
     createdAt DATETIME DEFAULT NOW(),
@@ -14,6 +15,7 @@ create table experience (
     role VARCHAR(255),
     company VARCHAR(255),
     summary VARCHAR(255),
+    resumeId INT,
     createdAt DATETIME DEFAULT NOW(),
     updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
     deletedAt DATETIME
@@ -23,6 +25,7 @@ create table education (
     degree VARCHAR(255),
     fieldOfStudy VARCHAR(255),
     institution VARCHAR(255),
+    resumeId INT,
     createdAt DATETIME DEFAULT NOW(),
     updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
     deletedAt DATETIME
@@ -33,12 +36,14 @@ create table skills (
     servers VARCHAR(255),
     frameworks VARCHAR(255),
     tools VARCHAR(255),
+    resumeId INT,
     createdAt DATETIME DEFAULT NOW(),
     updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
     deletedAt DATETIME
 );
 create table interests (
     hobbies VARCHAR(255),
+    resumeId INT,
     createdAt DATETIME DEFAULT NOW(),
     updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
     deletedAt DATETIME
@@ -47,10 +52,14 @@ create table contact (
 	number INT,
     email VARCHAR(255),
     social VARCHAR(255),
+    resumeId INT,
     createdAt DATETIME DEFAULT NOW(),
     updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
     deletedAt DATETIME
 );
-INSERT INTO experience (id, role, company, summary) VALUES (1, 'Computer Teacher', 'Jain Model School', 'Teach computer classes 1st to 8th');
+Show TABLES;
+DESC resume;
 
+select * from resume;
 select * from experience; 
+select * from education;

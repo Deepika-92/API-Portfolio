@@ -1,5 +1,6 @@
 const resume = {
   about: {
+    id: 1,
     name: 'Deepika Sharma',
     title: 'Web Developer'
   },
